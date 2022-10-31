@@ -16,6 +16,10 @@ th, td{
     text-align: center;
 }
 
+td:last-child::before{
+    content: "$";
+}
+
 caption{
     margin: 10px;
 }
