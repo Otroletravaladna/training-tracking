@@ -56,7 +56,35 @@
             </tr>
         </tfoot>
     </table>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Complete the form to add a new purchase</legend>
+            <div class="form-row">
+                <label for="purchase">Purchase</label>
+                <input type="text" name="purchase" id="purchase">
+            </div>
+            <div class="form-row">
+                <label for="purchase-date">Purchase date</label>
+                <input type="date" name="date" id="purchase-date">
+            </div>
+            <div class="form-row">
+                <label for="purchase-place">Purchase place</label>
+                <input type="text" name="place" id="purchase-place">
+            </div>
+            <div class="form-row">
+                <label for="purchase-price">Price</label>
+                <input type="number" name="number" id="purchase-price" min="0">
+            </div>
+            <fieldset class="radial-field">
+                <legend>Payment</legend>
+                <input type="radio" name="pay-type" id="cash" value="cash">
+                <label for="cash">Cash</label>
+                <input type="radio" name="pay-type" id="debit" value="debit">
+                <label for="debit">Debit Card</label>
+            </fieldset>
+            <button type="submit">Submit purchase</button>
+        </fieldset>
 
-
+    </form>
 </body>
 </html>

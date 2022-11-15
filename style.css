@@ -36,6 +36,29 @@ tbody tr:nth-child(odd) td{
     background-color: rgb(245,245,245);
 }
 
+button,
+input,
+select,
+textarea {
+    display: flex;
+    font-family: inherit;
+    font-size: 100%;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+fieldset{
+    position: relative;
+}
 
+legend{
+    color: #fff;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+}
 
