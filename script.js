@@ -7,8 +7,8 @@ function Purchase() {
     this.place = document.querySelector("#purchase-place").value;
     this.date = document.querySelector("#purchase-date").value;
     this.evaluation = document.querySelector("#eval").value;
-    this.price = document.querySelector("#purchase-price").value;
     this.payment = document.querySelector("#payment").value;
+    this.price = document.querySelector("#purchase-price").value;
 }
 
 Purchase.prototype.createRow = function() {
@@ -17,14 +17,16 @@ Purchase.prototype.createRow = function() {
     let dataPlace = document.createElement("td");
     let dataDate = document.createElement("td");
     let dataEval = document.createElement("td");
+    let dataPay = document.createElement("td");
     let dataPrice = document.createElement("td");
     tableBody.appendChild(newRow);
-    newRow.append(dataPur, dataPlace, dataDate, dataEval, dataPrice);
+    newRow.append(dataPur, dataPlace, dataDate, dataEval,dataPay, dataPrice);
     dataPur.textContent = this.purchase;
     dataPlace.textContent = this.place;
     dataDate.textContent = this.date;
     dataEval.textContent = this.evaluation;
     dataPrice.textContent = this.price;
+    dataPay.textContent = this.payment;
 }
 
 window.addEventListener("DOMContentLoaded", (e) =>{
@@ -36,14 +38,17 @@ window.addEventListener("DOMContentLoaded", (e) =>{
             let dataPlace = document.createElement("td");
             let dataDate = document.createElement("td");
             let dataEval = document.createElement("td");
+            let dataPay = document.createElement("td");
             let dataPrice = document.createElement("td");
             tableBody.appendChild(newRow);
-            newRow.append(dataPur, dataPlace, dataDate, dataEval, dataPrice);
+            newRow.append(dataPur, dataPlace, dataDate, dataEval, dataPay, dataPrice);
             dataPur.textContent = item.purchase;
             dataPlace.textContent = item.place;
             dataDate.textContent = item.date;
             dataEval.textContent = item.evaluation
             dataPrice.textContent = item.price;
+            dataPay.textContent = item.payment;
+
         }
     }
 })
