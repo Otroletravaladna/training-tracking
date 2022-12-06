@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expenses Tracking</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Expenses tracking</h1>
@@ -77,12 +78,12 @@
             </div>
             <fieldset class="radial-field">
                 <legend>Payment</legend>
-                <input type="radio" name="pay-type" id="cash" value="cash">
-                <label for="cash">Cash</label>
-                <input type="radio" name="pay-type" id="debit" value="debit">
-                <label for="debit">Debit Card</label>
+                <select name="payment" id="payment">
+                    <option value="cash">Cash</option>
+                    <option value="debit">Debit</option>
+                </select>
             </fieldset>
-            <button type="submit">Submit purchase</button>
+            <button id="submit" type="submit">Submit purchase</button>
         </fieldset>
 
     </form>
