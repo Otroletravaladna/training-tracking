@@ -10,6 +10,7 @@ function Purchase() {
     this.purchase = document.querySelector("#purchase").value;
     this.place = document.querySelector("#purchase-place").value;
     this.date = document.querySelector("#purchase-date").value;
+    this.evaluation = document.querySelector("#eval").value;
     this.price = document.querySelector("#purchase-price").value;
     this.payment = document.querySelector("#payment").value;
 }
@@ -26,7 +27,7 @@ Purchase.prototype.createRow = function() {
     dataPur.textContent = this.purchase;
     dataPlace.textContent = this.place;
     dataDate.textContent = this.date;
-    dataEval.textContent = "";
+    dataEval.textContent = this.evaluation;
     dataPrice.textContent = this.price;
 }
 
@@ -45,7 +46,7 @@ window.addEventListener("DOMContentLoaded", (e) =>{
             dataPur.textContent = item.purchase;
             dataPlace.textContent = item.place;
             dataDate.textContent = item.date;
-            dataEval.textContent = "";
+            dataEval.textContent = item.evaluation;
             dataPrice.textContent = item.price;
         }
     }

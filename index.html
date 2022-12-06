@@ -41,23 +41,27 @@
             <legend>Complete the form to add a new purchase</legend>
             <div class="form-row">
                 <label for="purchase">Purchase</label>
-                <input type="text" name="purchase" id="purchase">
+                <input type="text" name="purchase" id="purchase" required>
             </div>
             <div class="form-row">
                 <label for="purchase-date">Purchase date</label>
-                <input type="date" name="date" id="purchase-date">
+                <input type="date" name="date" id="purchase-date" required>
             </div>
             <div class="form-row">
                 <label for="purchase-place">Purchase place</label>
-                <input type="text" name="place" id="purchase-place">
+                <input type="text" name="place" id="purchase-place" required>
             </div>
             <div class="form-row">
                 <label for="purchase-price">Price</label>
-                <input type="number" name="number" id="purchase-price" min="0">
+                <input type="number" name="number" id="purchase-price" min="0" required>
+            </div>
+            <div class="form-row">
+                <label for="eval">Evaluation</label>
+                <input type="text" id="eval" name="eval" maxlength="15" required>
             </div>
             <fieldset class="radial-field">
                 <legend>Payment</legend>
-                <select name="payment" id="payment">
+                <select name="payment" id="payment" required>
                     <option value="cash">Cash</option>
                     <option value="debit">Debit</option>
                 </select>
