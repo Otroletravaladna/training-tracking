@@ -2,10 +2,6 @@ const submit = document.querySelector("#submit");
 const form = document.querySelector("form");
 const tableBody = document.querySelector("tbody");
 
-let expenses = [
-    // {purchase: 'Boleto El Tio-Temple', place: 'Terminal', date: '2022-12-03', price: '500', payment: 'cash'}
-];
-
 function Purchase() {
     this.purchase = document.querySelector("#purchase").value;
     this.place = document.querySelector("#purchase-place").value;
@@ -46,7 +42,7 @@ window.addEventListener("DOMContentLoaded", (e) =>{
             dataPur.textContent = item.purchase;
             dataPlace.textContent = item.place;
             dataDate.textContent = item.date;
-            dataEval.textContent = item.evaluation;
+            dataEval.textContent = item.evaluation
             dataPrice.textContent = item.price;
         }
     }
@@ -55,14 +51,14 @@ window.addEventListener("DOMContentLoaded", (e) =>{
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let newExpense = new Purchase();
-    expenses.push(newExpense);
+    archive.push(newExpense);
     newExpense.createRow();
 
-    localStorage.setItem("ExpensesList", JSON.stringify(expenses));
+    localStorage.setItem("ExpensesList", JSON.stringify(archive));
 })
 
-let newObject = window.localStorage.getItem("ExpensesList");
-let archive = (JSON.parse(newObject));
-console.log(archive);
+let archive = JSON.parse(localStorage.getItem("ExpensesList")) || [];
+console.log( archive);
+
 
 
