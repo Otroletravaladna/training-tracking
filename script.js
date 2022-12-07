@@ -48,7 +48,6 @@ window.addEventListener("DOMContentLoaded", (e) =>{
             dataEval.textContent = item.evaluation
             dataPrice.textContent = item.price;
             dataPay.textContent = item.payment;
-
         }
     }
 })
@@ -60,10 +59,19 @@ form.addEventListener("submit", (e) => {
     newExpense.createRow();
 
     localStorage.setItem("ExpensesList", JSON.stringify(archive));
+
+  
 })
 
+
 let archive = JSON.parse(localStorage.getItem("ExpensesList")) || [];
-console.log( archive);
 
+const sum = archive.reduce((total, item) => {
+    return total + Number(item.price);
+}, 0);
 
+const tfoot  = document.querySelector(".foot-row");
+const sumColumn = document.createElement("td");
+tfoot.appendChild(sumColumn);
 
+sumColumn.textContent = sum;
