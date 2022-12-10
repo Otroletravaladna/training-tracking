@@ -9,25 +9,44 @@ function Purchase() {
     this.evaluation = document.querySelector("#eval").value;
     this.payment = document.querySelector("#payment").value;
     this.price = document.querySelector("#purchase-price").value;
+
+    const createRow = (() => {
+        let newRow = document.createElement("tr");
+        let dataPur = document.createElement("td");
+        let dataPlace = document.createElement("td");
+        let dataDate = document.createElement("td");
+        let dataEval = document.createElement("td");
+        let dataPay = document.createElement("td");
+        let dataPrice = document.createElement("td");
+        tableBody.appendChild(newRow);
+        newRow.append(dataPur, dataPlace, dataDate, dataEval,dataPay, dataPrice);
+        dataPur.textContent = this.purchase;
+        dataPlace.textContent = this.place;
+        dataDate.textContent = this.date;
+        dataEval.textContent = this.evaluation;
+        dataPrice.textContent = this.price;
+        dataPay.textContent = this.payment;
+    })();
 }
 
-Purchase.prototype.createRow = function() {
-    let newRow = document.createElement("tr");
-    let dataPur = document.createElement("td");
-    let dataPlace = document.createElement("td");
-    let dataDate = document.createElement("td");
-    let dataEval = document.createElement("td");
-    let dataPay = document.createElement("td");
-    let dataPrice = document.createElement("td");
-    tableBody.appendChild(newRow);
-    newRow.append(dataPur, dataPlace, dataDate, dataEval,dataPay, dataPrice);
-    dataPur.textContent = this.purchase;
-    dataPlace.textContent = this.place;
-    dataDate.textContent = this.date;
-    dataEval.textContent = this.evaluation;
-    dataPrice.textContent = this.price;
-    dataPay.textContent = this.payment;
-}
+
+// Purchase.prototype.createRow = function() {
+//     let newRow = document.createElement("tr");
+//     let dataPur = document.createElement("td");
+//     let dataPlace = document.createElement("td");
+//     let dataDate = document.createElement("td");
+//     let dataEval = document.createElement("td");
+//     let dataPay = document.createElement("td");
+//     let dataPrice = document.createElement("td");
+//     tableBody.appendChild(newRow);
+//     newRow.append(dataPur, dataPlace, dataDate, dataEval,dataPay, dataPrice);
+//     dataPur.textContent = this.purchase;
+//     dataPlace.textContent = this.place;
+//     dataDate.textContent = this.date;
+//     dataEval.textContent = this.evaluation;
+//     dataPrice.textContent = this.price;
+//     dataPay.textContent = this.payment;
+// }
 
 window.addEventListener("DOMContentLoaded", (e) =>{
     e.preventDefault();
@@ -56,7 +75,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     let newExpense = new Purchase();
     archive.push(newExpense);
-    newExpense.createRow();
+    // newExpense.createRow();
 
     localStorage.setItem("ExpensesList", JSON.stringify(archive));
 
